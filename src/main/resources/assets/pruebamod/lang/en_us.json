@@ -1,6 +1,11 @@
 
 {
+  "itemGroup.pruebamod": "Pruebación",
   "item.pruebamod.pito": "Pito",
   "item.pruebamod.pito_cooked": "Pito quemao",
-  "block.pruebamod.meat_block": "Cubo carne"
+  "block.pruebamod.meat_block": "Cubo carne",
+  "block.pruebamod.pito_ore": "Pitore",
+  "item.pruebamod.iron_anal_plug": "Plug anal de hierro",
+  "item.pruebamod.diamond_anal_plug": "Plug anal de diamante"
+
 }

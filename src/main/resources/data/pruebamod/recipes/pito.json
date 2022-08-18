@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " p ",
+    " p ",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "minecraft:porkchop"
+    }
+  },
+  "result": {
+    "item": "pruebamod:pito"
+  }
+}

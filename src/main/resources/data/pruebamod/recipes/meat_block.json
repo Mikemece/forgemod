@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "pruebamod:pito_cooked"
+    }
+  },
+  "result": {
+    "item": "pruebamod:meat_block"
+  }
+}

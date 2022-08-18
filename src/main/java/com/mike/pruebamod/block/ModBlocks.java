@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,8 +22,10 @@ public class ModBlocks {
 
 //Primer bloque registrado
     public static final RegistryObject<Block> MEAT_BLOCK = registerBlock("meat_block", ()->new Block(BlockBehaviour.Properties.of(Material.NETHER_WOOD)
-            .strength(5f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_MISC);
+            .strength(1f).sound(SoundType.HONEY_BLOCK)), PruebaMod.PRUEBA_TAB);
 
+    public static final RegistryObject<Block> PITORE = registerBlock("pito_ore", ()->new Block(BlockBehaviour.Properties.of(Material.STONE)
+            .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)), PruebaMod.PRUEBA_TAB);
 
 
 

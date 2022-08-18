@@ -1,7 +1,8 @@
 package com.mike.pruebamod.item;
 
 import com.mike.pruebamod.PruebaMod;
-import net.minecraft.world.item.CreativeModeTab;
+import com.mike.pruebamod.item.custom.DiamondAnalPlugItem;
+import com.mike.pruebamod.item.custom.IronAnalPlugItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,10 +16,22 @@ public class ModItems {
 
 //primer objeto añadido
     public static final RegistryObject<Item> PITO = ITEMS.register("pito",
-            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            ()-> new Item(new Item.Properties().tab(PruebaMod.PRUEBA_TAB)));
 
     public static final RegistryObject<Item> PITOcocina = ITEMS.register("pito_cooked",
-            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            ()-> new Item(new Item.Properties().tab(PruebaMod.PRUEBA_TAB).food(ModFoods.PITO_QUEMAO)));
+
+    public static final RegistryObject<Item> IronAnalPlug = ITEMS.register("iron_anal_plug",
+            ()-> new IronAnalPlugItem(new Item.Properties().tab(PruebaMod.PRUEBA_TAB).durability(50)));
+
+    public static final RegistryObject<Item> DiamondAnalPlug = ITEMS.register("diamond_anal_plug",
+            ()-> new DiamondAnalPlugItem(new Item.Properties().tab(PruebaMod.PRUEBA_TAB).durability(150)));
+
+
+
+
+
+
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

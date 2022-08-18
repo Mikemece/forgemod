@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "pruebamod:pito"
+  },
+  "result": "pruebamod:pito_cooked",
+  "experience": 0.6,
+  "cookingtime": 100
+}

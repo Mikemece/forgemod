@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pruebamod:meat_block"
+    }
+  ],
+  "result": {
+    "item": "pruebamod:pito_cooked",
+    "count": 9
+  }
+}

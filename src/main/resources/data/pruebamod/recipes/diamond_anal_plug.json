@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " d ",
+    " d ",
+    "dad"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "a": {
+      "item": "minecraft:amethyst_cluster"
+    }
+  },
+  "result": {
+    "item": "pruebamod:diamond_anal_plug"
+  }
+}

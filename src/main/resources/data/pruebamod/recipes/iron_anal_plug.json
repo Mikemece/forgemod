@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+    " i ",
+    "iai"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "pruebamod:iron_anal_plug"
+  }
+}
