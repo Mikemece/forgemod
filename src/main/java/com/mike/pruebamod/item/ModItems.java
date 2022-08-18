@@ -17,6 +17,9 @@ public class ModItems {
     public static final RegistryObject<Item> PITO = ITEMS.register("pito",
             ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
+    public static final RegistryObject<Item> PITOcocina = ITEMS.register("pito_cooked",
+            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

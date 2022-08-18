@@ -1,4 +1,6 @@
 
 {
-  "item.pruebamod.pito": "Pito"
+  "item.pruebamod.pito": "Pito",
+  "item.pruebamod.pito_cooked": "Pito quemao",
+  "block.pruebamod.meat_block": "Cubo carne"
 }

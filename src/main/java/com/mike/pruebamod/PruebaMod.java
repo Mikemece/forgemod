@@ -1,5 +1,6 @@
 package com.mike.pruebamod;
 
+import com.mike.pruebamod.block.ModBlocks;
 import com.mike.pruebamod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Block;
@@ -32,6 +33,7 @@ public class PruebaMod
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
 
