@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " c ",
+    " im",
+    "aga"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_block"
+    },
+    "a": {
+      "item": "minecraft:amethyst_block"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    },
+    "m": {
+      "item": "pruebamod:manguera"
+    },
+    "c": {
+      "item": "minecraft:coal_block"
+    }
+  },
+  "result": {
+    "item": "pruebamod:amethyst_water_pipe"
+  }
+}

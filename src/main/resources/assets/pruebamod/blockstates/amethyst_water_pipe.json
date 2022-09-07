@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "pruebamod:block/amethyst_water_pipe" },
+    "facing=east": { "model": "pruebamod:block/amethyst_water_pipe", "y": 90 },
+    "facing=south": { "model": "pruebamod:block/amethyst_water_pipe", "y": 180 },
+    "facing=west": { "model": "pruebamod:block/amethyst_water_pipe", "y": 270 }
+  }
+}

@@ -12,14 +12,14 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class CachimbaMorada extends Block {
+public class AmethystWaterPipe extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public CachimbaMorada(Properties properties) {
+    public AmethystWaterPipe(Properties properties) {
         super(properties);
     }
 
-    private static final VoxelShape SHAPE =  Block.box(0, 0, 0, 8, 16, 8);
+    private static final VoxelShape SHAPE =  Block.box(5, 0, 5, 11, 16, 11);
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {

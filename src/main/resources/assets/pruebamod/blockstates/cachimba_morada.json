@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "pruebamod:block/cachimba_morada" },
-    "facing=east": { "model": "pruebamod:block/cachimba_morada", "y": 90 },
-    "facing=south": { "model": "pruebamod:block/cachimba_morada", "y": 180 },
-    "facing=west": { "model": "pruebamod:block/cachimba_morada", "y": 270 }
-  }
-}

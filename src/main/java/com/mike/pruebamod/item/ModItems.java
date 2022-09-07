@@ -27,9 +27,8 @@ public class ModItems {
     public static final RegistryObject<Item> DiamondAnalPlug = ITEMS.register("diamond_anal_plug",
             ()-> new DiamondAnalPlugItem(new Item.Properties().tab(PruebaMod.PRUEBA_TAB).durability(150)));
 
-
-
-
+    public static final RegistryObject<Item> MANGUERA = ITEMS.register("manguera",
+            ()-> new Item(new Item.Properties().tab(PruebaMod.PRUEBA_TAB)));
 
 
 
