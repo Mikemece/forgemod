@@ -1,6 +1,7 @@
 package com.mike.pruebamod.block;
 
 import com.mike.pruebamod.PruebaMod;
+import com.mike.pruebamod.block.custom.CachimbaMorada;
 import com.mike.pruebamod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -26,6 +27,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PITORE = registerBlock("pito_ore", ()->new Block(BlockBehaviour.Properties.of(Material.STONE)
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)), PruebaMod.PRUEBA_TAB);
+
+    public static final RegistryObject<Block> CACHIMBA_MORADA = registerBlock("cachimba_morada", ()->new CachimbaMorada(BlockBehaviour.Properties.of(Material.GLASS)
+            .strength(2f).sound(SoundType.GLASS).noOcclusion()), PruebaMod.PRUEBA_TAB);
 
 
 
