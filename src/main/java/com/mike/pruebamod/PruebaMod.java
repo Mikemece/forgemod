@@ -2,7 +2,7 @@ package com.mike.pruebamod;
 
 import com.mike.pruebamod.block.ModBlocks;
 import com.mike.pruebamod.item.ModItems;
-import com.mike.pruebamod.painting.ModPintings;
+import com.mike.pruebamod.painting.ModPaintings;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -39,7 +39,7 @@ public class PruebaMod
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-        ModPintings.register(eventBus);
+        ModPaintings.register(eventBus);
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
         // Register the enqueueIMC method for modloading
