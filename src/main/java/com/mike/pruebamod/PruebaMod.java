@@ -1,18 +1,21 @@
 package com.mike.pruebamod;
 
 import com.mike.pruebamod.block.ModBlocks;
+import com.mike.pruebamod.block.entity.ModBlockEntities;
 import com.mike.pruebamod.item.ModItems;
+import com.mike.pruebamod.networking.ModMessages;
 import com.mike.pruebamod.painting.ModPaintings;
+import com.mike.pruebamod.screen.ModMenuTypes;
+import com.mike.pruebamod.screen.WaterPipeScreen;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -40,6 +43,9 @@ public class PruebaMod
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
         ModPaintings.register(eventBus);
+        ModBlockEntities.register(eventBus);
+        ModMenuTypes.register(eventBus);
+
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
         // Register the enqueueIMC method for modloading
@@ -48,15 +54,17 @@ public class PruebaMod
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void clientSetup(final FMLClientSetupEvent event){
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.AMETHYST_WATER_PIPE.get(), RenderType.translucent());
-    }
-
-
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
         LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
+
+    @SubscribeEvent
+    public void clientSetup(final FMLClientSetupEvent event){
+            MenuScreens.register(ModMenuTypes.WATER_PIPE_MENU.get(), WaterPipeScreen::new);
+    }
+
 }

@@ -29,7 +29,8 @@ public class ModBlocks {
             .strength(4f).requiresCorrectToolForDrops().sound(SoundType.STONE)), PruebaMod.PRUEBA_TAB);
 
     public static final RegistryObject<Block> AMETHYST_WATER_PIPE = registerBlock("amethyst_water_pipe", ()->new AmethystWaterPipe(BlockBehaviour.Properties.of(Material.GLASS)
-            .strength(0.5f).sound(SoundType.GLASS).noOcclusion()), PruebaMod.PRUEBA_TAB);
+            .strength(0.5f).sound(SoundType.GLASS).noOcclusion().lightLevel(
+                    (state) -> state.getValue(AmethystWaterPipe.ISOFF) ? 0:8)), PruebaMod.PRUEBA_TAB);
 
 
 
