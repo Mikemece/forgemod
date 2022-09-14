@@ -7,6 +7,7 @@ import com.mike.pruebamod.networking.ModMessages;
 import com.mike.pruebamod.painting.ModPaintings;
 import com.mike.pruebamod.screen.ModMenuTypes;
 import com.mike.pruebamod.screen.WaterPipeScreen;
+import com.mike.pruebamod.sound.ModSounds;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
@@ -45,6 +46,7 @@ public class PruebaMod
         ModPaintings.register(eventBus);
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
+        ModSounds.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);

@@ -10,5 +10,7 @@
   "block.pruebamod.amethyst_water_pipe": "Cachimba morada",
   "item.pruebamod.manguera": "Manguera",
   "pruebamod.tooltip.liquid.amount.with.capacity" : "%s / %s mB",
-  "pruebamod.tooltip.liquid.amount": "%s mB"
+  "pruebamod.tooltip.liquid.amount": "%s mB",
+
+  "sounds.pruebamod.water_pipe_on": "Se enciende una cachimba"
 }

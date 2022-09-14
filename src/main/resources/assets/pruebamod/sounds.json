@@ -1,0 +1,14 @@
+{
+  "water_pipe_on": {
+    "subtitle": "sounds.pruebamod.water_pipe_on",
+    "sounds": [
+      "pruebamod:water_pipe_on"
+    ]
+  },
+  "water_pipe_smoke": {
+    "subtitle": "sounds.pruebamod.water_pipe_smoke",
+    "sounds": [
+      "pruebamod:water_pipe_smoke"
+    ]
+  }
+}

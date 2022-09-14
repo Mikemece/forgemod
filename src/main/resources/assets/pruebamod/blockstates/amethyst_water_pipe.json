@@ -1,8 +1,12 @@
 {
   "variants": {
-    "facing=north": { "model": "pruebamod:block/amethyst_water_pipe" },
-    "facing=east": { "model": "pruebamod:block/amethyst_water_pipe", "y": 90 },
-    "facing=south": { "model": "pruebamod:block/amethyst_water_pipe", "y": 180 },
-    "facing=west": { "model": "pruebamod:block/amethyst_water_pipe", "y": 270 }
+    "facing=north,isoff=true": { "model": "pruebamod:block/amethyst_water_pipe" },
+    "facing=east,isoff=true": { "model": "pruebamod:block/amethyst_water_pipe", "y": 90 },
+    "facing=south,isoff=true": { "model": "pruebamod:block/amethyst_water_pipe", "y": 180 },
+    "facing=west,isoff=true": { "model": "pruebamod:block/amethyst_water_pipe", "y": 270 },
+    "facing=north,isoff=false": { "model": "pruebamod:block/amethyst_water_pipe_on" },
+    "facing=east,isoff=false": { "model": "pruebamod:block/amethyst_water_pipe_on", "y": 90 },
+    "facing=south,isoff=false": { "model": "pruebamod:block/amethyst_water_pipe_on", "y": 180 },
+    "facing=west,isoff=false": { "model": "pruebamod:block/amethyst_water_pipe_on", "y": 270 }
   }
 }

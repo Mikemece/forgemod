@@ -1,5 +1,7 @@
 package com.mike.pruebamod.item.custom;
 
+import com.mike.pruebamod.sound.ModSounds;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -20,6 +22,7 @@ public class DiamondAnalPlugItem extends Item {
             player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 300,2));
             player.getCooldowns().addCooldown(this, 400);
             player.getItemInHand(usedHand).hurtAndBreak(1, player , (playera)-> player.broadcastBreakEvent(usedHand));
+
         return super.use(level, player, usedHand);
     }
 }

@@ -2,8 +2,13 @@ package com.mike.pruebamod.block.custom;
 import com.mike.pruebamod.block.entity.ModBlockEntities;
 import com.mike.pruebamod.block.entity.custom.AWPEntity;
 import com.mike.pruebamod.block.entity.custom.WaterPipeEntity;
+import com.mike.pruebamod.sound.ModSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -11,6 +16,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -31,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class AmethystWaterPipe extends BaseEntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    public static final BooleanProperty ISOFF =BooleanProperty.create("ison");
+    public static final BooleanProperty ISOFF =BooleanProperty.create("isoff");
 
     public AmethystWaterPipe(Properties properties) {
         super(properties);
@@ -96,19 +102,25 @@ public class AmethystWaterPipe extends BaseEntityBlock {
             //Si está encendida y se le da con un mechero se apaga
             if(pPlayer.getItemInHand(pHand).getItem()==Items.FLINT_AND_STEEL && !isOff) {
                 pLevel.setBlock(pPos, pState.setValue(ISOFF, true),3);
+                pLevel.playSound(null, pPos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS,0.5f,1f);
 
             //Si tiene la receta dentro y se le da con un mechero se enciende
             }else if(pPlayer.getItemInHand(pHand).getItem()==Items.FLINT_AND_STEEL && recipe) {
+                pLevel.playSound(null, pPos, ModSounds.WATER_PIPE_ON.get(), SoundSource.BLOCKS,1f,1f);
                 pLevel.setBlock(pPos, pState.setValue(ISOFF, false),3);
+
 
             //Si está encendida y se le da con algo que no sea mechero se fuma
             }else if(!isOff && pPlayer.getItemInHand(pHand).getItem()!=Items.FLINT_AND_STEEL && recipe) {
+                pLevel.playSound(null, pPos, ModSounds.WATER_PIPE_SMOKE.get(), SoundSource.BLOCKS,1f,1f);
                 AWPEntity.craftItem((AWPEntity) entity);
                 pPlayer.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,500,2));
+
 
             //Si se intenta fumar cuando no tiene materiales, se apaga
             }else if(!isOff && pPlayer.getItemInHand(pHand).getItem()!=Items.FLINT_AND_STEEL && !recipe){
                 pLevel.setBlock(pPos, pState.setValue(ISOFF, true),3);
+                pLevel.playSound(null, pPos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS,0.5f,1f);
 
             //Si no ocurre nada de lo anterior accedemos al inventario
             }else{

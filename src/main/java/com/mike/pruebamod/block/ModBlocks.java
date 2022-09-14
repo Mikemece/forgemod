@@ -3,6 +3,7 @@ package com.mike.pruebamod.block;
 import com.mike.pruebamod.PruebaMod;
 import com.mike.pruebamod.block.custom.AmethystWaterPipe;
 import com.mike.pruebamod.item.ModItems;
+import com.mike.pruebamod.sound.ModSounds;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
