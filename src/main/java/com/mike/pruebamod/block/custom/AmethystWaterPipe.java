@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -33,6 +34,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 
 public class AmethystWaterPipe extends BaseEntityBlock {
@@ -112,7 +115,7 @@ public class AmethystWaterPipe extends BaseEntityBlock {
 
             //Si está encendida y se le da con algo que no sea mechero se fuma
             }else if(!isOff && pPlayer.getItemInHand(pHand).getItem()!=Items.FLINT_AND_STEEL && recipe) {
-                pLevel.playSound(null, pPos, ModSounds.WATER_PIPE_SMOKE.get(), SoundSource.BLOCKS,1f,1f);
+                pLevel.playSound(null, pPos, ModSounds.WATER_PIPE_SMOKE.get(), SoundSource.BLOCKS,1.5f,1f);
                 AWPEntity.craftItem((AWPEntity) entity);
                 pPlayer.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,500,2));
 
@@ -132,6 +135,25 @@ public class AmethystWaterPipe extends BaseEntityBlock {
             }
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
+    }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        boolean isOff = pState.getValue(ISOFF);
+        if(!isOff){
+            float chance = 0.35f;
+            float chance2 = 0.25f;
+            if(pRandom.nextFloat() > chance) {
+                pLevel.addParticle(ParticleTypes.SMOKE, pPos.getX() + 0.5D,
+                        pPos.getY() + 0.9D, pPos.getZ() + 0.5D,
+                        0d,0.03d,0d);
+            }
+            if(chance2< pRandom.nextFloat()){
+                pLevel.addParticle(ParticleTypes.SMALL_FLAME, pPos.getX() + 0.5D,
+                        pPos.getY() + 0.9D, pPos.getZ() + 0.5D,
+                        0d,0.03d,0d);
+            }
+        }
     }
 
     @Nullable
